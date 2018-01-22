@@ -32,7 +32,26 @@ namespace Aula04.Controllers
             ViewBag.Mensagem = "Início";
             return View();
         }
-
+        public ActionResult Sobre()
+        {
+            ViewBag.Mensagem = "Sobre";
+            return View();
+        }
+        public ActionResult Contato()
+        {
+            ViewBag.Mensagem = "Contato";
+            return View();
+        }
+        public ActionResult Cadastro()
+        {
+            ViewBag.Mensagem = "Cadastro";
+            return View();
+        }
+        public ActionResult Entrar()
+        {
+            ViewBag.Mensagem = "Entrar";
+            return View();
+        }
         #endregion
 
 

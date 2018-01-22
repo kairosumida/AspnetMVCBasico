@@ -188,6 +188,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\Curso\Welcome.cshtml" />
+    <Content Include="Views\Curso\MinhaLoja.cshtml" />
+    <Content Include="Views\Curso\Inicio.cshtml" />
+    <Content Include="Views\Curso\Sobre.cshtml" />
+    <Content Include="Views\Curso\Contato.cshtml" />
+    <Content Include="Views\Curso\Cadastro.cshtml" />
+    <Content Include="Views\Curso\Entrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
