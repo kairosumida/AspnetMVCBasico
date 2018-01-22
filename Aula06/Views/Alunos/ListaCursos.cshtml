@@ -13,3 +13,16 @@
     }
 
 }
+
+@{ 
+    var minhasNotas = new Dictionary<string, int>();
+    minhasNotas.Add("prova1", 8);
+    minhasNotas.Add("prova2", 7);
+    minhasNotas.Add("prova3", 9);
+}
+<p>Nota na prova 2 : @minhasNotas["prova2"]</p>
+
+Revisão da nota para 10
+@{ minhasNotas["prova2"] = 10;}
+
+<p>Nota revisada na prova 2 : @minhasNotas["prova2"]</p>
