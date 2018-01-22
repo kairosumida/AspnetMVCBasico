@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@*@{ string curso = "ASP NET MVC";}
+<h2>Index</h2>
+<h3>Curso de @curso</h3>*@
+
+
+@{ string curso = "";
+    curso = "ASP NET MVC";
+    }
+@{ 
+    var msg = "";
+    if(DateTime.Now.Hour<12)
+    {
+        msg = "Bom dia";
+    }
+    else if((DateTime.Now.Hour>12) && (DateTime.Now.Hour<18))
+    {
+        msg = "Boa tarde";
+    }
+    else
+    {
+        msg = "Boa noite";
+    }
+}
+<h2>Index</h2>
+<h3>Curso de @curso</h3>
+<h4>@msg</h4>
+<table border="1">
+    <tr>
+        <th width="100px">Propriedade</th>
+        <td width="100px">Valor</td>
+    </tr>
+    <tr>
+        <td>Hora</td>
+        <td>@DateTime.Now.Hour</td>
+    </tr>
+    <tr>
+        <td>Minuto</td>
+        <td>@DateTime.Now.Minute</td>
+    </tr>
+</table>
+
+@{ 
+    var msg2 = "";
+    var mes = DateTime.Today.Month;
+    var ano = DateTime.Today.Year;
+
+    switch (mes)
+    {
+        case 1:
+            msg2 = "janeiro";
+            break;
+        case 2:
+            msg2 = "fevereiro";
+            break;
+        case 3:
+            msg2 = "março";
+            break;
+        case 4:
+            msg2 = "abril";
+            break;
+        case 5:
+            msg2 = "maio";
+            break;
+        case 6:
+            msg2 = "junho";
+            break;
+        default:
+            msg2 = "segundo semestre";
+            break;
+    }
+    msg2 = "Estamos em " + msg2 + "/" + ano;
+}
