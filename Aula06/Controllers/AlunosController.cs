@@ -13,5 +13,13 @@ namespace Aula06.Controllers
         {
             return View();
         }
+        public ActionResult Notas(double nota1 = 0, double nota2 =0)
+        {
+            return View();
+        }
+        public ActionResult Variaveis()
+        {
+            return View();
+        }
     }
 }

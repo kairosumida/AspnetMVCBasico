@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Notas";
+}
+
+<h2>Notas</h2>
+@{ string curso = "ASP NET MVC";
+    double media = 0;
+    double nota1 = Convert.ToDouble(Request["nota1"]);
+    double nota2 = Convert.ToDouble(Request["nota2"]);
+    media = (nota1 + nota2) / 2;
+}
+<h2>Index</h2>
+<h3>Curso de @curso</h3>
+
+<table border="1">
+    <tr>
+        <th width="80px">Prova</th>
+        <td width="50px">Nota</td>
+    </tr>
+    <tr>
+        <td>Primeira</td>
+        <td>@nota1.ToString("0.00")</td>
+    </tr>
+    <tr>
+        <td>Segunda</td>
+        <td>@nota2.ToString("0.00")</td>
+    </tr>
+    <tr>
+        <td>Média</td>
+        <td>@media.ToString("0.00")</td>
+    </tr>
+</table>
