@@ -27,7 +27,11 @@ namespace Aula04.Controllers
             ViewBag.Mensagem = "Minha Loja";
             return View();
         }
-        
+        public ActionResult Inicio()
+        {
+            ViewBag.Mensagem = "Início";
+            return View();
+        }
 
         #endregion
 
