@@ -13,5 +13,12 @@ namespace Aula04.Controllers
         {
             return View();
         }
+
+        public ActionResult Welcome(string nome, string curso)
+        {
+            ViewBag.Mensagem = nome + " Bem vindo ao curso de " + curso;
+            return View();
+        }
+
     }
 }
