@@ -19,6 +19,11 @@ namespace Aula03.Controllers
             texto += "<p>Resultado: " + (op1 + op2) + "</p>";
             return texto;
         }
-
+        public string Subtracao(double op1, double op2)
+        {
+            string texto = "<h1>Operação Subtracao</h1>";
+            texto += "<p>Resultado: " + (op1 - op2) + "</p>";
+            return texto;
+        }
     }
 }
