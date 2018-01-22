@@ -13,5 +13,12 @@ namespace Aula03.Controllers
         {
             return View();
         }
+        public string Soma(double op1, double op2)
+        {
+            string texto = "<h1>Operação Soma</h1>";
+            texto += "<p>Resultado: " + (op1 + op2) + "</p>";
+            return texto;
+        }
+
     }
 }
