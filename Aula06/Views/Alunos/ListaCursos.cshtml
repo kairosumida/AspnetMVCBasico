@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ListaCursos";
+}
+
+<h2>ListaCursos</h2>
+
+<h4> Wincomp Informática Ltda</h4>
+@{ string[] Cursos = { "C# básico", "C# avançado", "ASP NET Web Forms", "ASP NET MVC" };
+    foreach (var curso in Cursos)
+    {
+        <p>@curso</p>
+    }
+
+}

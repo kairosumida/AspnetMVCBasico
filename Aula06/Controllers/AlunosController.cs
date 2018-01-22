@@ -25,5 +25,9 @@ namespace Aula06.Controllers
         {
             return View();
         }
+        public ActionResult ListaCursos()
+        {
+            return View();
+        }
     }
 }
