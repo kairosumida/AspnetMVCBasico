@@ -25,5 +25,11 @@ namespace Aula03.Controllers
             texto += "<p>Resultado: " + (op1 - op2) + "</p>";
             return texto;
         }
+        public string Multiplicacao(double op1, double op2)
+        {
+            string texto = "<h1>Operação Multiplicacao</h1>";
+            texto += "<p>Resultado: " + (op1 * op2) + "</p>";
+            return texto;
+        }
     }
 }
