@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aula06.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,11 @@ namespace Aula06.Controllers
 {
     public class AlunosController : Controller
     {
+        private Aula06DataContext db = new Aula06DataContext();
         // GET: Alunos
         public ActionResult Index()
         {
-            return View();
+            return View(db.Alunos.ToList());
         }
         public ActionResult Notas(double nota1 = 0, double nota2 =0)
         {
