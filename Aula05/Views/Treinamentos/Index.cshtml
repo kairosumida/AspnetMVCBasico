@@ -25,6 +25,9 @@
                 @Html.DisplayNameFor(model => model.Desconto)
             </th>
             <th>
+                Preço Final
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Local)
             </th>
             <th></th>
@@ -33,26 +36,30 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NomeTreinamento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Inicio)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Termino)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Preco)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desconto)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Local)
-                </td>
-            </tr>
+        decimal precoFinal = Convert.ToDecimal(item.Preco) - Convert.ToDecimal(item.Desconto);
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeTreinamento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Inicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Termino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Preco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desconto)
+            </td>
+            <td>
+                @precoFinal.ToString()
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Local)
+            </td>
+        </tr>
         }
-        </tbody>
+    </tbody>
 </table>
