@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Nome";
+}
+
+<h2>Nome</h2>
+
+@{ 
+    var nomeComple = "";
+    if (IsPost)
+    {
+        var nome = Request["txtNome"];
+        var sobrenome = Request["txtSobrenome"];
+        nomeComple = nome + " " + sobrenome;
+    }
+
+    <h2>Cadastrar aluno</h2>
+    <title>Nome</title>
+    <p>Digite o seu nome e sobrenome</p>
+    <form action="" method="post">
+        <p>
+            <label for="text1">Nome>:</label>
+            <input type="text" name="txtNome" />
+        </p>
+        <p>
+            <label for="text2">Sobrenome:</label>
+            <input type="text" name="txtSobrenome" />
+        </p>
+        <p><input type="submit" value="Enviar" /> </p>
+    </form>
+    <p>Nome Completo: <b>@nomeComple</b></p>
+}
