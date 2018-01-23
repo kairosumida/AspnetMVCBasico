@@ -17,10 +17,13 @@
         Modelo: @Html.DropDownList("Modelo", "")
     </p>
     <p>
+        Estado: @Html.DropDownList("Estado", "")
+    </p>
+    <p>
         @Html.TextBox("precoMin", "", new { placeholder = "Preço Minimo" }) a
         @Html.TextBox("precoMax", "", new { placeholder = "Preço Maximo" })
 
-        
+
     </p>
     <p><input type="submit" value="Filtrar" /></p>
 }

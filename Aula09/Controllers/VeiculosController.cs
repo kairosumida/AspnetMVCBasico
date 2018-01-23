@@ -15,13 +15,14 @@ namespace Aula09.Controllers
         private Aula09Context db = new Aula09Context();
 
         // GET: Veiculos
-        public ActionResult Index(string marca, string combustivel, string modelo,string precoMin, string precoMax)
+        public ActionResult Index(string marca, string combustivel, string modelo,string precoMin, string precoMax, string estado)
         {
             decimal min = 0;
             decimal max = 0;
             var listaMarcas = new List<string>();
             var listaCombustiveis = new List<string>();
             var listaModelo = new List<string>();
+            var listaEstado = new List<string>();
             #region(BuscaMarca)
             var m = from d in db.Veiculos orderby d.Marca.ToString() select d.Marca.ToString();//Busca no banco todas as marcas
             listaMarcas.AddRange(m.Distinct());//Separa as Marcas repetidas e descarta
@@ -38,7 +39,9 @@ namespace Aula09.Controllers
             ViewBag.Modelo = new SelectList(listaModelo);
             #endregion
             #region(BuscaEstado)
-
+            var c2 = from d in db.Veiculos orderby d.Estado select d.Estado;
+            listaEstado.AddRange(c2.Distinct());
+            ViewBag.Estado = new SelectList(listaEstado);
             #endregion
             #region(ValidarPreco)
             try { min = Convert.ToDecimal(precoMin); }catch{}
@@ -56,6 +59,10 @@ namespace Aula09.Controllers
             if (!String.IsNullOrEmpty(modelo))
             {
                 veiculos = veiculos.Where(v => v.Modelo == modelo);
+            }
+            if (!String.IsNullOrEmpty(estado))
+            {
+                veiculos = veiculos.Where(v => v.Estado == estado);
             }
             veiculos = veiculos.Where(v => v.Preco > min);
             if (max != 0)
