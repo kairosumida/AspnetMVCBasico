@@ -15,23 +15,35 @@ namespace Aula09.Controllers
         private Aula09Context db = new Aula09Context();
 
         // GET: Veiculos
-        public ActionResult Index(string marca, string combustivel)
+        public ActionResult Index(string marca, string combustivel, string modelo,string precoMin, string precoMax)
         {
-            
+            decimal min = 0;
+            decimal max = 0;
             var listaMarcas = new List<string>();
             var listaCombustiveis = new List<string>();
+            var listaModelo = new List<string>();
             #region(BuscaMarca)
             var m = from d in db.Veiculos orderby d.Marca.ToString() select d.Marca.ToString();//Busca no banco todas as marcas
             listaMarcas.AddRange(m.Distinct());//Separa as Marcas repetidas e descarta
             ViewBag.Marca = new SelectList(listaMarcas); //Envia para a view com base no nome do dropdown
             #endregion
-
             #region(BuscaCombustivel)
             var c = from d in db.Veiculos orderby d.Combustivel.ToString() select d.Combustivel.ToString();
             listaCombustiveis.AddRange(c.Distinct());
             ViewBag.Combustivel = new SelectList(listaCombustiveis);
             #endregion
+            #region(BuscaModelo)
+            var c1 = from d in db.Veiculos orderby d.Modelo select d.Modelo;
+            listaModelo.AddRange(c1.Distinct());
+            ViewBag.Modelo = new SelectList(listaModelo);
+            #endregion
+            #region(BuscaEstado)
 
+            #endregion
+            #region(ValidarPreco)
+            try { min = Convert.ToDecimal(precoMin); }catch{}
+            try { max = Convert.ToDecimal(precoMax); } catch {}
+            #endregion
             var veiculos = from v in db.Veiculos select v;
             if (!String.IsNullOrEmpty(marca))
             {
@@ -41,7 +53,13 @@ namespace Aula09.Controllers
             {
                 veiculos = veiculos.Where(v => v.Combustivel.ToString() == combustivel);
             }
-
+            if (!String.IsNullOrEmpty(modelo))
+            {
+                veiculos = veiculos.Where(v => v.Modelo == modelo);
+            }
+            veiculos = veiculos.Where(v => v.Preco > min);
+            if (max != 0)
+                veiculos = veiculos.Where(v => v.Preco < max);
            
             
             return View(veiculos);
