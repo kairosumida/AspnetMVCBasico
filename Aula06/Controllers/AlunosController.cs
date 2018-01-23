@@ -31,5 +31,21 @@ namespace Aula06.Controllers
         {
             return View();
         }
+
+        public ActionResult Incluir()
+        {
+            return View();
+        }
+
+        public ActionResult Salvar()
+        {
+            Aluno aluno = new Aluno();
+            aluno.Nome = Request["txtNome"].ToString();
+            aluno.Email = Request["txtEmail"].ToString();
+            aluno.Senha = Request["txtSenha"].ToString();
+            db.Alunos.Add(aluno);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

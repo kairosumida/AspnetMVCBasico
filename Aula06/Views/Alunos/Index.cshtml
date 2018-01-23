@@ -1,11 +1,11 @@
-﻿
+﻿@model IEnumerable<Aula06.Models.Aluno>
 @{
     ViewBag.Title = "Index";
+    string empresa = "Wincomp informática Ltda";
 }
-
 @*@{ string curso = "ASP NET MVC";}
 <h2>Index</h2>
-<h3>Curso de @curso</h3>*@
+<h3>Curso de @curso</h3>
 
 
 @{ string curso = "";
@@ -74,4 +74,23 @@
             break;
     }
     msg2 = "Estamos em " + msg2 + "/" + ano;
-}
+}*@
+
+
+<h2>Cadastro de Alunos</h2>
+<h3>@empresa</h3>
+
+<table class="table">
+    <tr>
+        <th>Nome</th><th>Email</th><th>Senha</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Email</td>
+            <td>@item.Senha</td>
+        </tr>
+    }
+
+</table>

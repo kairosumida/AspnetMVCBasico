@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Incluir";
+    string empresa = "Wincomp Informática Ltda";
+}
+
+<h2>@empresa</h2>
+<h3>Incluir</h3>
+<h4>Cadastro de Alunos</h4>
+
+<form action="Salvar" method="post">
+
+    <table class="table">
+        <tr>
+            <td><label for="text1">Nome:</label></td>
+            <td><input type="text" name="txtNome" /></td>
+        </tr>
+        <tr>
+            <td><label for="text2">Email:</label></td>
+            <td><input type="text" name="txtEmail"/></td>
+        </tr>
+        <tr>
+            <td><label for="text3">Senha:</label></td>
+            <td><input type="text" name="txtSenha" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="Incluir" /></td>
+        </tr>
+    </table>
+</form>

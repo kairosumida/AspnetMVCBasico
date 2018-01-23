@@ -203,6 +203,7 @@
     <Compile Include="Models\Aula06DataContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Treinamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -307,6 +308,7 @@
     <Content Include="Views\Alunos\Variaveis.cshtml" />
     <Content Include="Views\Alunos\Nome.cshtml" />
     <Content Include="Views\Alunos\ListaCursos.cshtml" />
+    <Content Include="Views\Alunos\Incluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
