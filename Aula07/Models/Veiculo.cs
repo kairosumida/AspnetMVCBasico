@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -15,10 +17,13 @@ namespace Aula07.Models
     }
     public class Veiculo
     {
+        [Key]
         public int Id { get; set; }
         public Marca Marca { get; set; }
         public string Modelo { get; set; }
+        [DisplayName("Observação")]
         public string Observacao { get; set; }
+        [DisplayName("Preço")]
         public decimal Preco { get; set; }
         public string Estado { get; set; }
         public Combustivel Combustivel { get; set; }
