@@ -10,5 +10,6 @@ namespace Aula09.Models
     {
         public DbSet<Aluno> Alunos { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Veiculo> Veiculos { get; set; }
     }
 }

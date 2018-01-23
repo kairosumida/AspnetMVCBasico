@@ -157,6 +157,7 @@
     <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Aula09Context.cs" />
     <Compile Include="Models\Cidade.cs" />
+    <Compile Include="Models\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
