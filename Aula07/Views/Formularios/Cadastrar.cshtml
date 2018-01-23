@@ -1,7 +1,26 @@
 ﻿
 @{
     ViewBag.Title = "Cadastrar";
+
+    List<SelectListItem> items = new List<SelectListItem>();
+    items.Add(new SelectListItem { Text = "Selecione", Value = "0", Selected = true });
+    items.Add(new SelectListItem { Text = "Solteiro", Value = "1" });
+    items.Add(new SelectListItem { Text = "Casado", Value = "2" });
+    items.Add(new SelectListItem { Text = "Viuvo", Value = "3" });
 }
 
 <h2>Cadastrar</h2>
 
+@using (Html.BeginForm("CadastrarLogin", "Formularios"))
+{
+    @Html.Label("Preencha todos os campos abaixo");
+    <p>Nome: @Html.TextBox("txtNome")</p>
+    <p>Email: @Html.TextBox("txtEmail")</p>
+    <p>Senha: @Html.Password("txtSenha")</p>
+    <p>Repita: @Html.Password("txtRepetir")</p>
+    <p>Lembrete: @Html.TextArea("txtLembrete", "")</p>
+    <p>Sexo: @Html.RadioButton("rdbSexo", "Masculino") Masculino @Html.RadioButton("rdSexo", "Feminino") Feminino</p>
+    <p>Estado Cívil: @Html.DropDownList("chbEstadoCivul", items)</p>
+    <p>@Html.CheckBox("chkConcordo",false) Concordo com os termos do site</p>
+    <p><input type="submit" value="Salvar" /></p>
+}
