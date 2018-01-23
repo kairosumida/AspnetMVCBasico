@@ -43,5 +43,40 @@ namespace Aula07.Controllers
         {
             return View();
         }
+        public ActionResult CadastrarLogin()
+        {
+            var nome = "";
+            var email = "";
+            var senha = "";
+            var repetir = "";
+            var lembrete = "";
+            var sexo = "";
+            var estadoCivil = "";
+            var concordo = "";
+            nome = Request["txtNome"].ToString();
+            email = Request["txtEmail"].ToString();
+            senha = Request["txtSenha"].ToString();
+            repetir = Request["txtRepetir"].ToString();
+            lembrete = Request["txtLembretee"].ToString();
+            sexo = Request["rdbSexo"].ToString();
+            estadoCivil = Request["chbEstadoCivil"].ToString();
+            switch (estadoCivil)
+            {
+                case "1": estadoCivil = "Solteiro";break;
+                case "2": estadoCivil = "Casado"; break;
+                case "3": estadoCivil = "Viuvo"; break;
+            }
+            concordo = Request.Form.GetValues("chkConcordo")[0].ToString();
+            ViewBag.Nome = nome;
+            ViewBag.Email = email;
+            ViewBag.Senha = senha;
+            ViewBag.Repetir = repetir;
+            ViewBag.Lembrete = lembrete;
+            ViewBag.Sexo = sexo;
+            ViewBag.EstadoCivil = estadoCivil;
+            ViewBag.Concordo = concordo;
+            return View("NovoLogin");
+        }
+        
     }
 }
