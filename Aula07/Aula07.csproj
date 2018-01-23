@@ -271,6 +271,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Formularios\Login.cshtml" />
     <Content Include="Views\Formularios\BemVindo.cshtml" />
+    <Content Include="Views\Formularios\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
