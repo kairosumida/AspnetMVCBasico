@@ -15,7 +15,7 @@ namespace Aula09.Controllers
         private Aula09Context db = new Aula09Context();
 
         // GET: Veiculos
-        public ActionResult Index(string marca, string combustivel, string modelo,string precoMin, string precoMax, string estado)
+        public ActionResult Index(string marca, string combustivel, string modelo,string precoMin, string precoMax, string estado, string publicar)
         {
             decimal min = 0;
             decimal max = 0;
@@ -23,6 +23,7 @@ namespace Aula09.Controllers
             var listaCombustiveis = new List<string>();
             var listaModelo = new List<string>();
             var listaEstado = new List<string>();
+            var listaPublicar = new List<string>();
             #region(BuscaMarca)
             var m = from d in db.Veiculos orderby d.Marca.ToString() select d.Marca.ToString();//Busca no banco todas as marcas
             listaMarcas.AddRange(m.Distinct());//Separa as Marcas repetidas e descarta
@@ -42,6 +43,11 @@ namespace Aula09.Controllers
             var c2 = from d in db.Veiculos orderby d.Estado select d.Estado;
             listaEstado.AddRange(c2.Distinct());
             ViewBag.Estado = new SelectList(listaEstado);
+            #endregion
+            #region(BuscaPublicar)
+            var c3 = from d in db.Veiculos orderby d.Publicar.ToString() select d.Publicar.ToString();
+            listaPublicar.AddRange(c3.Distinct());
+            ViewBag.Publicar = new SelectList(listaPublicar);
             #endregion
             #region(ValidarPreco)
             try { min = Convert.ToDecimal(precoMin); }catch{}
@@ -63,6 +69,10 @@ namespace Aula09.Controllers
             if (!String.IsNullOrEmpty(estado))
             {
                 veiculos = veiculos.Where(v => v.Estado == estado);
+            }
+            if (!String.IsNullOrEmpty(publicar))
+            {
+                veiculos = veiculos.Where(v => v.Publicar.ToString() == publicar);
             }
             veiculos = veiculos.Where(v => v.Preco > min);
             if (max != 0)
