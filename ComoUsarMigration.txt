@@ -1,0 +1,6 @@
+Abrir Console do Gerenciador de Pacote
+Digitar: 
+1 Enable-Migration
+2 Add-Migration
+3 Nome do migration Ex: Tabela Pessoa Criada
+4 Update-Database
