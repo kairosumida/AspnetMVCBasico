@@ -5,7 +5,7 @@
 
 <h2>Login</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("VerificaLogin", "Formularios"))
 {
     @Html.Label("Faça seu Login");
 
@@ -22,4 +22,5 @@
             <td align="center" colspan="2"><input type="submit" value="Entrar" /></td>
         </tr>
     </table>
+    @ViewBag.Alerta
 }
