@@ -39,5 +39,9 @@ namespace Aula07.Controllers
         {
             return View();
         }
+        public ActionResult Cadastrar()
+        {
+            return View();
+        }
     }
 }

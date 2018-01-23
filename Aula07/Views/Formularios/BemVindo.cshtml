@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "BemVindo";
+}
+
+<h2>BemVindo</h2>
+
+<table width="200">
+    <tr>
+        <td align="right">Email:</td>
+        <td><b>@ViewBag.Email</b></td>
+    </tr>
+    <tr>
+        <td align="right">Senha:</td>
+        <td><b>@ViewBag.Senha</b></td>
+    </tr>
+    <tr>
+        <td align="center" colspan="2"> @Html.ActionLink("Voltar","Login")</td>
+    </tr>
+
+</table>
