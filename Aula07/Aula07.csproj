@@ -272,6 +272,7 @@
     <Content Include="Views\Formularios\Login.cshtml" />
     <Content Include="Views\Formularios\BemVindo.cshtml" />
     <Content Include="Views\Formularios\Cadastrar.cshtml" />
+    <Content Include="Views\Formularios\NovoLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

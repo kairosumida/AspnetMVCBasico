@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "NovoLogin";
+}
+
+<h2>NovoLogin</h2>
+
+<table width="200">
+    <tr><td align="right">Nome:</td><td><b>@ViewBag.Nome</b></td></tr>
+    <tr><td align="right">Email:</td><td><b>@ViewBag.Email</b></td></tr>
+    <tr><td align="right">Senha:</td><td><b>@ViewBag.Senha</b></td></tr>
+    <tr><td align="right">Repetir:</td><td><b>@ViewBag.Repetir</b></td></tr>
+    <tr><td align="right">Lembrete:</td><td><b>@ViewBag.Lembrete</b></td></tr>
+    <tr><td align="right">Sexo:</td><td><b>@ViewBag.Sexo</b></td></tr>
+    <tr><td align="right">EstadoCivil:</td><td><b>@ViewBag.EstadoCivil</b></td></tr>
+    <tr><td align="right">Concordo:</td><td><b>@ViewBag.Concordo</b></td></tr>
+    <tr>
+        <td align="center" colspan="2" >@Html.ActionLink("Efetuar Login", "Login")</td>
+    </tr>
+</table>
