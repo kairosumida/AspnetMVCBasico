@@ -6,23 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Aula08.Models;
+using Aula09.Models;
 
-namespace Aula08.Controllers
+namespace Aula09.Controllers
 {
     public class AlunosController : Controller
     {
-        private Aula08DBContext db = new Aula08DBContext();
+        private Aula09Context db = new Aula09Context();
 
         // GET: Alunos
-        public ActionResult Index(string nome)
+        public ActionResult Index()
         {
-            var alunos = from m in db.Alunos select m;
-            if (!String.IsNullOrEmpty(nome))
-            {
-                alunos = alunos.Where(s => s.Nome.Contains(nome));
-            }
-            return View(alunos);
+            return View(db.Alunos.ToList());
         }
 
         // GET: Alunos/Details/5

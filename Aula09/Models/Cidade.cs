@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
 
 namespace Aula09.Models
 {
-    public class Aula09Context : DbContext
+    public class Cidade
     {
-        public DbSet<Aluno> Alunos { get; set; }
     }
 }

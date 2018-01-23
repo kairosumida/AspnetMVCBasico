@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Aula09.Models.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+    string empresa = "Wincomp Informática Ltda";
+}
+<h2>Cadastro de Alunos</h2>
+<h3>@empresa</h3>
+@using (Html.BeginForm())
+{
+    <p>
+        Nome: @Html.TextBox("nome") <input type="submit" value="Filtrar" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Senha)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Senha)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+    <tr>
+        <td colspan="3" align="center">@Html.ActionLink("Incluir novo aluno", "Incluir")</td>
+    </tr>
+</table>
