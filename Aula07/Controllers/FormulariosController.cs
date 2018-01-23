@@ -43,6 +43,10 @@ namespace Aula07.Controllers
         {
             return View();
         }
+        public ActionResult NovoLogin()
+        {
+            return View();
+        }
         public ActionResult CadastrarLogin()
         {
             var nome = "";
@@ -57,7 +61,7 @@ namespace Aula07.Controllers
             email = Request["txtEmail"].ToString();
             senha = Request["txtSenha"].ToString();
             repetir = Request["txtRepetir"].ToString();
-            lembrete = Request["txtLembretee"].ToString();
+            lembrete = Request["txtLembrete"].ToString();
             sexo = Request["rdbSexo"].ToString();
             estadoCivil = Request["chbEstadoCivil"].ToString();
             switch (estadoCivil)
@@ -77,6 +81,6 @@ namespace Aula07.Controllers
             ViewBag.Concordo = concordo;
             return View("NovoLogin");
         }
-        
+
     }
 }
