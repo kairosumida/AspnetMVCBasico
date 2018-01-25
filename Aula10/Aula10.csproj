@@ -115,13 +115,25 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Views\Treinamentos\Create.cshtml" />
+    <Content Include="Views\Treinamentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\TreinamentosController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801242323065_InitialCreate.cs" />
+    <Compile Include="Migrations\201801242323065_InitialCreate.Designer.cs">
+      <DependentUpon>201801242323065_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801250010442_Tabela Treinamento.cs" />
+    <Compile Include="Migrations\201801250010442_Tabela Treinamento.Designer.cs">
+      <DependentUpon>201801250010442_Tabela Treinamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Aula10DbContext.cs" />
     <Compile Include="Models\Treinamento.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -133,9 +145,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Usuarios\Create.cshtml" />
-    <Content Include="Views\Usuarios\Delete.cshtml" />
-    <Content Include="Views\Usuarios\Details.cshtml" />
-    <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
@@ -147,6 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801242323065_InitialCreate.resx">
+      <DependentUpon>201801242323065_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801250010442_Tabela Treinamento.resx">
+      <DependentUpon>201801250010442_Tabela Treinamento.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
