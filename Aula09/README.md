@@ -1,7 +1,8 @@
- <h1>Aula 09</h1>
- <h3>Busca varios nomes no BD e seleciona cada nome diferente e popula uma dropdownlist</h3>
 
- <h4>Controller</h4>
+<h1>Aula 09</h1>
+<h3>Populando uma dropdownlist</h3>
+<p>Busca no banco de dados todos os nomes em uma coluna, separa cada diferente e adiciona a List, envia por uma ViewBag que adiciona uma DropDownList na View</p>
+<h4>Controller</h4>
  
        var listaNome = new List<string>();
        var m = from d in db.Objetos orderby d.Nome select d.Nome;//Busca no banco todas os nomes
@@ -14,7 +15,7 @@
       
       
       
-      
+<h3>Usando Enums</h3>      
 <p>Para utilizar enums é a mesma coisa, mudando apenas </p>
 
        var m = from d in db.Objetos orderby d.Nome select d.Nome;
