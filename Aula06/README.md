@@ -1,7 +1,7 @@
 
 <h1>Aula 6</h1>
-<h2>Para criar um objeto e adicioná-lo ao banco de dados é necessário criar 1 view e 1 método na Controller</h2>
-<p>Tem como objetivo cadastrar um objeto no banco de dados
+<h2>Add objetos no banco de dados</h2>
+<p>Tem como objetivo cadastrar um objeto no banco de dados. Para criar um objeto e adicioná-lo ao banco de dados é necessário criar 1 view e 1 método na Controller
 <h3>Controller</h3>
  	public ActionResult Create()
         {
