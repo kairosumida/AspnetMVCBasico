@@ -15,9 +15,32 @@ namespace Aula11.Controllers
         private Aula11Context db = new Aula11Context();
 
         // GET: Cursos
-        public ActionResult Index()
+        public ActionResult Index(string ordem, string buscaNomeCurso)
         {
-            return View(db.Cursos.ToList());
+            
+            ViewBag.OrdemCurso = String.IsNullOrEmpty(ordem) ? "curso_desc" : "";
+            ViewBag.OrdemPreco = ordem == "preco" ? "preco_desc" : "preco";
+            var cursos = from c in db.Cursos select c;
+            if (!String.IsNullOrEmpty(buscaNomeCurso))
+            {
+                cursos = cursos.Where(x => x.Nome.Contains(buscaNomeCurso));
+            }
+            switch (ordem)
+            {
+                case "curso_desc":
+                    cursos = cursos.OrderByDescending(x => x.Nome);
+                    break;
+                case "preco_desc":
+                    cursos = cursos.OrderByDescending(x => x.Preco);
+                    break;
+                case "preco":
+                    cursos = cursos.OrderBy(x => x.Preco);
+                    break;
+                default:
+                    cursos = cursos.OrderBy(x => x.Nome);
+                    break;
+            }
+            return View(cursos.ToList());
         }
 
         // GET: Cursos/Details/5

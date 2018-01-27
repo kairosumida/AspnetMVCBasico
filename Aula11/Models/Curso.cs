@@ -11,8 +11,9 @@ namespace Aula11.Models
     {
         [Key]
         public int CursoID { get; set; }
+        [DisplayName("Curso")]
         public string Nome { get; set; }
-        [Range(typeof(decimal), "10", "1000", ErrorMessage = "O preço deve de 1 a 100000")]
+        [Range(typeof(decimal), "1", "100000", ErrorMessage = "O preço deve de 1 a 100000")]
         [DisplayName("Preço")]
         public decimal Preco { get; set; }
     }
