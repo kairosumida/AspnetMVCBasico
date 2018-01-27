@@ -1,12 +1,7 @@
-<div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-}<h1>Aula 6</h1>
-<h2>Para criar um objeto e adicioná-lo ao banco de dados é necessário criar 2 métodos</h2>
 
+<h1>Aula 6</h1>
+<h2>Para criar um objeto e adicioná-lo ao banco de dados é necessário criar 1 view e 1 método na Controller</h2>
+<p>Tem como objetivo cadastrar um objeto no banco de dados
 <h3>Controller</h3>
  	public ActionResult Create()
         {
